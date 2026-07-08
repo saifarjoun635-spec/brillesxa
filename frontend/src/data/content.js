@@ -122,6 +122,6 @@ const emailBody = encodeURIComponent(
   "Bonjour BRILLEXA+,\n\nJ'aimerais obtenir une soumission pour un service de nettoyage.\n\nType de service : \nAdresse : \nSuperficie / nombre de pièces : \nDate souhaitée : \n\nMerci !"
 );
 
-export const SMS_HREF = `sms:${CONTACT.phoneRaw}?&body=${smsBody}`;
+export const SMS_HREF = `sms:${CONTACT.phoneRaw}?body=${smsBody}`;
 export const EMAIL_HREF = `mailto:${CONTACT.email}?subject=${emailSubject}&body=${emailBody}`;
 export const TEL_HREF = `tel:${CONTACT.phoneRaw}`;
