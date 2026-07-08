@@ -1,0 +1,126 @@
+{
+  "project_name": "BRILLEXA+",
+  "slogan": "On Fait Briller vos Espaces Comme Jamais",
+  "theme": "light",
+  "design_archetype": "SWISS & HIGH-CONTRAST + ORGANIC & EARTHY",
+  "typography": {
+    "headings": {
+      "family": "Outfit",
+      "weights": ["300", "700", "900"],
+      "strategy": "High impact, wide geometric sans for trust and modern feel. No Inter for headings. Use tracking-tight for large headings."
+    },
+    "body": {
+      "family": "Manrope",
+      "weights": ["400", "500"],
+      "strategy": "Highly readable, human-centric sans serif for content."
+    }
+  },
+  "colors": {
+    "primary": "#1E3A8A",
+    "primary_hover": "#172554",
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "accent": "#38BDF8",
+    "text_main": "#0F172A",
+    "text_muted": "#64748B",
+    "border": "#E2E8F0"
+  },
+  "visual_enhancers": {
+    "surfaces": [
+      {
+        "element": "Sticky Header",
+        "style": "Glassmorphism (The Crystal Variant)",
+        "classes": "sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-white/20 shadow-[0_8px_32px_rgba(30,58,138,0.05)] backdrop-saturate-150"
+      },
+      {
+        "element": "Service Cards",
+        "style": "Subtle Lift Neumorphism + 1px border",
+        "classes": "bg-white rounded-3xl border border-slate-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(30,58,138,0.08)] transition-transform transition-shadow duration-300"
+      }
+    ],
+    "textures": "Subtle noise overlay (opacity 1-2%) on hero sections to kill digital flatness."
+  },
+  "layouts": {
+    "hero": "Minimalist split or asymmetrical focus. Massive bold heading left-aligned, soft sparkling imagery right-aligned. Negative space utilized heavily (py-24 or py-32).",
+    "services_grid": "Bento Box style. grid-cols-1 md:grid-cols-12 gap-6. Mix row-spans to break symmetry. Example: Nettoyage Résidentiel (col-span-8), Commercial (col-span-4).",
+    "spacing_scale": "Use p-8, p-12, py-24 for vertical rhythm."
+  },
+  "components": {
+    "navbar": "Fixed at top. Logo left, pages center, primary CTA right. Pages: Accueil, Services, À propos, Contact, Blog.",
+    "buttons": "Pill-shaped (rounded-full). Primary uses pure brand color (#1E3A8A) with white text and subtle hover lift. Include micro-animations.",
+    "testimonials": "Must feature large decorative quotation marks at start and end. Use Manrope for quotes, center-aligned or elegantly staggered. Include small avatar.",
+    "contact_actions": "Two prominent pill buttons on the contact page/section: 'Envoyer un SMS' (href='sms:4385252631') and 'Envoyer un Courriel' (href='mailto:Brillexa.cleaning@gmail.com'). No backend forms."
+  },
+  "pages_structure": [
+    {
+      "name": "Accueil",
+      "sections": ["Hero Minimal", "Bento Services Teaser", "Testimonials Showcase", "Call to Action"]
+    },
+    {
+      "name": "Services",
+      "sections": ["Nettoyage Résidentiel", "Nettoyage Commercial", "Grand Ménage", "Entretien Régulier"]
+    },
+    {
+      "name": "À propos",
+      "sections": ["Brand Story", "Our Values (Trust, Sparkle, Cleanliness)"]
+    },
+    {
+      "name": "Contact / Soumission",
+      "sections": ["Direct Contact Methods (SMS & Email buttons)"]
+    },
+    {
+      "name": "Blog",
+      "sections": ["Latest Articles Grid"]
+    }
+  ],
+  "motion": {
+    "page_transitions": "Framer motion opacity + y-axis slide (20px) on load.",
+    "hover_states": "Buttons and cards must have transform and shadow transitions (duration-300 ease-out).",
+    "scroll_reveal": "Use staggered entrance animations for lists and grids."
+  },
+  "image_urls": {
+    "hero_residential": {
+      "url": "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjbGVhbiUyMG1vZGVybiUyMGxpdmluZyUyMHJvb20lMjBpbnRlcmlvcnxlbnwwfHx8fDE3ODM1MzAyMzJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern, sparkling clean living room with large window."
+    },
+    "commercial_cleaning": {
+      "url": "https://images.unsplash.com/photo-1781637590564-01c65dbf2039?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb21tZXJjaWFsJTIwb2ZmaWNlJTIwY2xlYW5pbmd8ZW58MHx8fHwxNzgzNTMwMjMyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional commercial office cleaning in progress."
+    },
+    "clean_office": {
+      "url": "https://images.unsplash.com/photo-1577412647305-991150c7d163?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb21tZXJjaWFsJTIwb2ZmaWNlJTIwY2xlYW5pbmd8ZW58MHx8fHwxNzgzNTMwMjMyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Pristine white commercial desk space."
+    },
+    "testimonial_avatar": {
+      "url": "https://images.unsplash.com/photo-1625241152315-4a698f74ceb7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHNtaWxpbmclMjBwZXJzb24lMjBwb3J0cmFpdCUyMGNsb3NlJTIwdXB8ZW58MHx8fHwxNzgzNTMwMjMyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Happy smiling customer for testimonial section."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use .js/.jsx extensions for all files, DO NOT use .tsx/.ts files.",
+    "Install and use lucide-react for icons.",
+    "Install and use framer-motion for UI interactions.",
+    "Do NOT use pure white backgrounds everywhere without structural contrast. Use #FAFAFA for main background and #FFFFFF for cards.",
+    "Build custom layout sections rather than relying strictly on generic Shadcn cards for marketing areas.",
+    "Ensure the hero section overlay is subtle. The hero must communicate cleanliness and light.",
+    "Use data-testid on all interactive elements: navigation links, buttons, SMS/Email action buttons.",
+    "All text is in French. Be mindful of accented characters.",
+    "No backend logic for the contact form: use standard HTML anchor tags styling as buttons with href='mailto:Brillexa.cleaning@gmail.com' and href='sms:4385252631'."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do not converge toward generic outputs. Use creative layouts.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add specific transitions.",
+    "You MUST NOT center align the app container in CSS.",
+    "Always use modern button styles (pill-shaped).",
+    "NEVER use AI assistant Emoji characters.",
+    "Every interaction needs micro-animations.",
+    "Use generous spacing (2-3x more than usual)."
+  ],
+  "accessibility": {
+    "contrast": "Ensure Royal Blue text on white backgrounds passes WCAG AA.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute.",
+    "focus": "Custom focus rings (ring-blue-900) on all tabbable elements."
+  }
+}
