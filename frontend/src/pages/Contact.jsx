@@ -1,6 +1,7 @@
 import { Phone, Mail, Globe, MessageSquareText, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { CONTACT, TEL_HREF, EMAIL_HREF, SMS_HREF } from "../data/content";
+import { QuoteForm } from "../components/QuoteForm";
 
 export default function Contact() {
   return (
@@ -76,6 +77,29 @@ export default function Contact() {
             </a>
           </motion.div>
         </div>
+      </section>
+
+      {/* FULL SUBMISSION FORM */}
+      <section className="mx-auto max-w-3xl px-5 pt-20 lg:px-8" data-testid="contact-form-section">
+        <div className="text-center">
+          <p className="text-sm font-bold uppercase tracking-wider text-brand-light">Formulaire de soumission</p>
+          <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Décrivez votre projet en détail
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-slate-600">
+            Remplissez ce formulaire complet et envoyez-le en un clic par courriel ou
+            par texto. Nous vous répondrons rapidement avec votre soumission.
+          </p>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-10"
+        >
+          <QuoteForm />
+        </motion.div>
       </section>
 
       {/* INFO CARDS */}
