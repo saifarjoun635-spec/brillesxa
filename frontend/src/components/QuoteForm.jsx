@@ -58,11 +58,10 @@ export const QuoteForm = () => {
   };
 
   const finish = (href) => {
-    window.location.href = href;
-    setTimeout(
-      () => navigate("/merci", { state: { nom: form.nom, service: form.service } }),
-      500
-    );
+    navigate("/merci", { state: { nom: form.nom, service: form.service } });
+    setTimeout(() => {
+      window.location.href = href;
+    }, 120);
   };
 
   const sendEmail = () => {
