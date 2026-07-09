@@ -1,8 +1,12 @@
-import { Home, Building2, Sparkles, CalendarCheck, Check } from "lucide-react";
-import { Section, ContactButtons } from "../components/Shared";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPopper, Leaf, ArrowRight,
+} from "lucide-react";
+import { ContactButtons } from "../components/Shared";
 import { SERVICES } from "../data/content";
 
-const ICONS = { Home, Building2, Sparkles, CalendarCheck };
+const ICONS = { Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPopper, Leaf };
 
 export default function Services() {
   return (
@@ -15,57 +19,54 @@ export default function Services() {
             Des solutions de nettoyage pour chaque besoin
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 lg:text-lg">
-            Que ce soit pour votre domicile ou votre entreprise, notre équipe
-            s'adapte à vos exigences avec rigueur et professionnalisme.
+            Résidentiel, commercial, grand ménage ou nettoyage écologique : choisissez
+            un service pour en savoir plus et obtenir votre soumission gratuite.
           </p>
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl space-y-24 px-5 py-20 lg:px-8">
-        {SERVICES.map((s, i) => {
-          const Icon = ICONS[s.icon];
-          const reversed = i % 2 === 1;
-          return (
-            <Section
-              key={s.id}
-              id={s.id}
-              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
-            >
-              <div className={reversed ? "lg:order-2" : ""}>
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand">
-                  <Icon className="h-7 w-7" strokeWidth={2.2} />
-                </span>
-                <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-slate-900">
-                  {s.title}
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-slate-600">{s.description}</p>
-                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {s.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
-                        <Check className="h-3.5 w-3.5" strokeWidth={3} />
-                      </span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={`relative ${reversed ? "lg:order-1" : ""}`}>
-                <div
-                  className={`absolute -z-10 h-full w-full rounded-[2rem] bg-brand/10 ${
-                    reversed ? "-left-5 -top-5" : "-right-5 -top-5"
-                  }`}
-                />
-                <img
-                  src={s.image}
-                  alt={s.title}
-                  className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-xl shadow-brand/10"
-                />
-              </div>
-            </Section>
-          );
-        })}
-      </div>
+      {/* GRID */}
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((s, i) => {
+            const Icon = ICONS[s.icon];
+            return (
+              <motion.div
+                key={s.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
+              >
+                <Link
+                  to={`/services/${s.slug}`}
+                  data-testid={`service-card-${s.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-transform transition-shadow duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(30,58,138,0.1)]"
+                >
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-brand shadow-lg backdrop-blur">
+                      <Icon className="h-5 w-5" strokeWidth={2.3} />
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-lg font-bold text-slate-900">{s.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">{s.short}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-all group-hover:gap-3">
+                      En savoir plus <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-white py-20" data-testid="services-cta">

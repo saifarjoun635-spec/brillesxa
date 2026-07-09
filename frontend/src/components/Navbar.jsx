@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "./Logo";
-import { NAV_LINKS, TEL_HREF } from "../data/content";
+import { NAV_LINKS, TEL_HREF, CONTACT } from "../data/content";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -68,11 +68,19 @@ export const Navbar = () => {
           <a
             href={TEL_HREF}
             data-testid="nav-call-button"
+            aria-label={`Appeler ${CONTACT.phone}`}
+            className="hidden h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand transition-colors hover:bg-brand/5 sm:flex"
+          >
+            <Phone className="h-5 w-5" strokeWidth={2.4} />
+          </a>
+          <Link
+            to="/contact"
+            data-testid="nav-quote-button"
             className="hidden items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-dark sm:flex"
           >
-            <Phone className="h-4 w-4" strokeWidth={2.5} />
-            Appeler
-          </a>
+            <Sparkles className="h-4 w-4" strokeWidth={2.5} />
+            Devis gratuit
+          </Link>
           <button
             onClick={() => setOpen((v) => !v)}
             data-testid="mobile-menu-toggle"
@@ -110,12 +118,19 @@ export const Navbar = () => {
                   {link.label}
                 </NavLink>
               ))}
+              <Link
+                to="/contact"
+                data-testid="mobile-quote-button"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3.5 text-base font-semibold text-white"
+              >
+                <Sparkles className="h-4 w-4" /> Demander un devis gratuit
+              </Link>
               <a
                 href={TEL_HREF}
                 data-testid="mobile-call-button"
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-base font-semibold text-white"
+                className="flex items-center justify-center gap-2 rounded-full border border-brand/20 px-5 py-3.5 text-base font-semibold text-brand"
               >
-                <Phone className="h-4 w-4" /> Appeler maintenant
+                <Phone className="h-4 w-4" /> {CONTACT.phone}
               </a>
             </div>
           </motion.div>

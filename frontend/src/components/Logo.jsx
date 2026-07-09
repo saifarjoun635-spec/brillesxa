@@ -1,25 +1,13 @@
-import { Sparkles } from "lucide-react";
+import { LOGO_SRC } from "../data/content";
 
-export const Logo = ({ light = false, className = "" }) => {
+export const Logo = ({ light = false, className = "", imgClass = "h-9 sm:h-10" }) => {
   return (
-    <div className={`flex items-center gap-2 ${className}`} data-testid="brand-logo">
-      <span
-        className={`flex h-9 w-9 items-center justify-center rounded-xl ${
-          light ? "bg-white/15" : "bg-brand"
-        }`}
-      >
-        <Sparkles className="h-5 w-5 text-white" strokeWidth={2.4} />
-      </span>
-      <div className="leading-none">
-        <span
-          className={`font-display text-xl font-extrabold tracking-tight ${
-            light ? "text-white" : "text-brand"
-          }`}
-        >
-          BRILLEXA
-          <span className={light ? "text-brand-light" : "text-brand-light"}>+</span>
-        </span>
-      </div>
-    </div>
+    <span className={`inline-flex items-center ${className}`} data-testid="brand-logo">
+      <img
+        src={LOGO_SRC}
+        alt="BRILLEXA+ — nettoyage résidentiel et commercial"
+        className={`w-auto object-contain ${imgClass} ${light ? "brightness-0 invert" : ""}`}
+      />
+    </span>
   );
 };

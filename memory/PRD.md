@@ -26,7 +26,15 @@
 - Footer avec navigation + coordonnées de l'image.
 - Testé par testing agent: 30/30 checks frontend, 100%.
 
-## Backlog / Prochaines étapes
+## Implémenté (2026-07-09) — Refonte inspirée du site existant
+- Ajout du **logo officiel** (détouré, fond transparent) dans navbar + footer.
+- **Mobile-first** : hero, grilles, formulaire et navigation optimisés petit écran.
+- **8 services** inspirés du site brillexacleaning.ca : Résidentiel, Commercial, Grand Ménage, Déménagement, Airbnb/Turnover, Post-construction, Événementiel, Écologique.
+- **Pages détail service** (`/services/:slug`) avec CTA.
+- **Parcours complet** : service → CTA « Demander une soumission » → formulaire pré-rempli (via `?service=slug`) → **page de remerciement `/merci`** (confirmation). Vérifié bout en bout.
+- Barre promo (CLEAN15), section « Pourquoi Brillexa », 6 témoignages, réseaux sociaux (FB/IG/LinkedIn).
+- « Made with Emergent » retiré, titre/description SEO mis à jour.
+
 - P1: Pages d'articles de blog complètes (contenu détaillé).
 - P1: Remplacer témoignages fictifs par de vrais avis clients.
 - P2: Page 404 dédiée.
