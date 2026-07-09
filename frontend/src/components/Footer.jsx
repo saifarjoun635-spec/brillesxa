@@ -10,9 +10,11 @@ export const Footer = () => {
     <footer className="mt-auto bg-brand-dark text-white" data-testid="main-footer">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8 lg:py-16">
         <div className="sm:col-span-2 lg:col-span-1">
-          <span className="inline-flex rounded-xl bg-white px-3 py-2">
-            <Logo imgClass="h-7" />
-          </span>
+          <img
+            src="/logo_brillexa_new.png"
+            alt="BRILLEXA+"
+            className="h-16 w-auto object-contain rounded-xl"
+          />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-blue-100/80">
             On fait briller vos espaces comme jamais. Nettoyage professionnel dans le
             {" "}{CONTACT.region}.
