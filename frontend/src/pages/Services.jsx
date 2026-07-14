@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPopper, Leaf, ArrowRight,
@@ -11,6 +12,11 @@ const ICONS = { Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPoppe
 export default function Services() {
   return (
     <div data-testid="page-services">
+      <SEO
+        title="Nos Services de Nettoyage — Résidentiel, Commercial & Plus"
+        description="Découvrez tous les services de nettoyage de BRILLEXA+ à Montréal : ménage résidentiel, commercial, grand ménage, déménagement, Airbnb, post-construction. Soumission gratuite."
+        canonical="/services"
+      />
       {/* HEADER */}
       <section className="border-b border-slate-100 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">

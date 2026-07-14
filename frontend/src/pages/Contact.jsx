@@ -1,4 +1,5 @@
 import { Phone, Mail, Globe, MessageSquareText, MapPin } from "lucide-react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { CONTACT, TEL_HREF, EMAIL_HREF, SMS_HREF } from "../data/content";
 import { QuoteForm } from "../components/QuoteForm";
@@ -6,6 +7,11 @@ import { QuoteForm } from "../components/QuoteForm";
 export default function Contact() {
   return (
     <div data-testid="page-contact">
+      <SEO
+        title="Contact — Soumission Gratuite de Nettoyage à Montréal"
+        description="Obtenez une soumission gratuite pour votre nettoyage résidentiel ou commercial à Montréal. Contactez BRILLEXA+ par texto ou courriel. Réponse en 24h."
+        canonical="/contact"
+      />
       <section className="relative overflow-hidden bg-brand-dark text-white">
         <div className="brillexa-noise pointer-events-none absolute inset-0 opacity-10" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-light/20 blur-3xl" />

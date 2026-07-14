@@ -1,4 +1,5 @@
 import { ShieldCheck, Sparkles, HeartHandshake, Clock } from "lucide-react";
+import SEO from "@/components/SEO";
 import { Section, ContactButtons } from "../components/Shared";
 import { SERVICES } from "../data/content";
 
@@ -28,6 +29,11 @@ const VALUES = [
 export default function APropos() {
   return (
     <div data-testid="page-apropos">
+      <SEO
+        title="À Propos — BRILLEXA+"
+        description="Découvrez l'équipe BRILLEXA+ : une équipe professionnelle de nettoyage dans le Grand Montréal, engagée pour la qualité, la confiance et le respect de vos espaces."
+        canonical="/a-propos"
+      />
       <section className="relative overflow-hidden border-b border-slate-100 bg-white">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
           <div>

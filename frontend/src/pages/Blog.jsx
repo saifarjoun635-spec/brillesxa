@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 import { Section, ContactButtons } from "../components/Shared";
 import { POSTS } from "../data/content";
 
@@ -7,6 +8,11 @@ export default function Blog() {
 
   return (
     <div data-testid="page-blog">
+      <SEO
+        title="Blogue — Conseils & Astuces de Nettoyage Professionnel"
+        description="Astuces, conseils et guides de nettoyage par les professionnels de BRILLEXA+. Apprenez comment garder votre maison ou bureau impeccable plus longtemps."
+        canonical="/blog"
+      />
       <section className="border-b border-slate-100 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
           <p className="text-sm font-bold uppercase tracking-wider text-brand-light">Le blogue</p>

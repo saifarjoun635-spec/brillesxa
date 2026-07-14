@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPopper, Leaf,
@@ -15,6 +16,11 @@ export default function Accueil() {
 
   return (
     <div data-testid="page-accueil">
+      <SEO
+        title="Nettoyage Résidentiel & Commercial à Montréal"
+        description="BRILLEXA+ offre un service de nettoyage résidentiel et commercial dans le Grand Montréal. Ménage en profondeur, déménagement, Airbnb, post-construction. Soumission gratuite en 24h — 438-525-2631."
+        canonical="/"
+      />
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="brillexa-noise pointer-events-none absolute inset-0 opacity-[0.03]" />

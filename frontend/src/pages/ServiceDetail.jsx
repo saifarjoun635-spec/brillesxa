@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Home, Building2, Sparkles, Truck, BedDouble, HardHat, PartyPopper, Leaf,
@@ -18,6 +19,11 @@ export default function ServiceDetail() {
 
   return (
     <div data-testid="page-service-detail">
+      <SEO
+        title={service.title + " à Montréal"}
+        description={service.description + " Soumission gratuite en 24h — BRILLEXA+ 438-525-2631."}
+        canonical={"/services/" + service.slug}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-brand-dark text-white">
         <img
